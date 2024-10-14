@@ -33,17 +33,6 @@ function createMarkers() {
     });
 }
 
-function positionMarkers() {
-    const markers = document.querySelectorAll('.marker');
-    markers.forEach(marker => {
-        const top = parseFloat(marker.style.top);
-        const left = parseFloat(marker.style.left);
-        
-        marker.style.top = `${top}px`;
-        marker.style.left = `${left}px`;
-    });
-}
-
 function centerMap() {
     const mapWidth = mapImage.offsetWidth;
     const mapHeight = mapImage.offsetHeight;
@@ -90,6 +79,5 @@ function autoScroll() {
 }
 
 createMarkers();
-positionMarkers();
 autoScroll();
 centerMap();
