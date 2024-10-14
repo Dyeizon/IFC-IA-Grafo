@@ -48,29 +48,39 @@ body {
 
 .map-container {
     position: relative;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Hide overflow */
+    min-width: 100vw;
+    max-width: fit-content;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .map-image {
-    position: absolute; /* Allow positioning */
+    position: absolute;
     top: 0;
     left: 0;
-    width: auto; /* Maintain aspect ratio */
-    height: auto; /* Maintain aspect ratio */
-    max-width: none; /* Allow for full size */
+    width: auto;
+    height: auto;
+    max-width: none;
 }
 
 .marker {
     position: absolute;
-    width: 30px; /* Marker size */
-    height: 30px; /* Marker size */
-    background-color: red; /* Marker color */
-    border-radius: 50%; /* Make it circular */
-    cursor: pointer; /* Pointer on hover */
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.marker > span {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .marker:hover {
-    background-color: orange; /* Change color on hover */
+    background-color: orange;
 }

@@ -1,11 +1,58 @@
 const mapContainer = document.getElementById('map-container');
 const mapImage = document.getElementById('map');
 
-// Auto-scroll settings
-const scrollSpeed = 20; // Adjust for scroll speed
-const edgeThreshold = 75; // Distance from edge to trigger scroll
-let scrollDirection = { x: 0, y: 0 }; // Direction of scrolling
-let autoScrollInterval; // Interval for auto-scrolling
+const scrollSpeed = 20;
+const edgeThreshold = 75;
+let scrollDirection = { x: 0, y: 0 };
+let autoScrollInterval;
+
+const originalWidth = mapImage.naturalWidth;
+const originalHeight = mapImage.naturalHeight;
+
+const markers = [
+    { top: 150, left: 1000, content: 'Poço' },
+    { top: 1050, left: 1000, content: 'M01' },
+    { top: 1050, left: 1100, content: 'M02' },
+    { top: 1050, left: 1200, content: 'M03' },
+    { top: 1050, left: 1300, content: 'M04' },
+    { top: 1050, left: 1400, content: 'M05' },
+];
+
+function createMarkers() {
+    markers.forEach(marker => {
+        const markerElement = document.createElement('div');
+        markerElement.className = 'marker';
+        markerElement.style.top = `${marker.top}px`;
+        markerElement.style.left = `${marker.left}px`;
+
+        const spanElement = document.createElement('span');
+        spanElement.textContent = marker.content;
+
+        markerElement.appendChild(spanElement);
+        mapContainer.appendChild(markerElement);
+    });
+}
+
+function positionMarkers() {
+    const markers = document.querySelectorAll('.marker');
+    markers.forEach(marker => {
+        const top = parseFloat(marker.style.top);
+        const left = parseFloat(marker.style.left);
+        
+        marker.style.top = `${top}px`;
+        marker.style.left = `${left}px`;
+    });
+}
+
+function centerMap() {
+    const mapWidth = mapImage.offsetWidth;
+    const mapHeight = mapImage.offsetHeight;
+
+    mapContainer.scrollLeft = mapWidth / 2;
+    mapContainer.scrollTop = mapHeight / 2;
+
+    console.log(mapWidth, mapHeight)
+}
 
 function autoScroll() {
     document.onmousemove = (e) => {
@@ -42,4 +89,7 @@ function autoScroll() {
     };
 }
 
+createMarkers();
+positionMarkers();
 autoScroll();
+centerMap();
