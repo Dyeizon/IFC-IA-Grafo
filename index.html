@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa do IFC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cursors">
+        <div class="cursors-side" style="top: 0; width: 100vw; height: 75px;">
+            <div class="cursors-arrow">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="cursors-side" style="right: 0; width: 75px; height: 100vh;">
+            <div style="rotate: 90deg;" class="cursors-arrow">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="cursors-side" style="bottom: 0; width: 100vw; height: 75px;">
+            <div style="rotate: 180deg;" class="cursors-arrow">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <div class="cursors-side" style="left: 0; width: 75px; height: 100vh;">
+            <div style="rotate: 270deg;" class="cursors-arrow">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-container" id="map-container">
+        <img src="PlantaIFC.png" alt="Map" class="map-image" id="map">
+        <div class="marker" style="top: 20%; left: 30%;" title="Location 1"></div>
+        <div class="marker" style="top: 60%; left: 70%;" title="Location 2"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

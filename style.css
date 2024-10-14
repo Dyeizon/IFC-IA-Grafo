@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.cursors-side {
+    position: absolute;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    z-index: 10;
+}
+
+.cursors-arrow {
+    --arrow-size: 20px;
+    display: flex;
+    width: var(--arrow-size);
+}
+
+.cursors-arrow > div {
+    width: 5px; 
+    height: var(--arrow-size); 
+    background-color: #666;
+    position: relative;
+    border-radius: 4px;
+}
+
+.cursors-arrow > div:first-child {
+     rotate: 45deg;
+}
+
+.cursors-arrow > div:last-child {
+    rotate: -45deg;
+    left: 7px;
+}
+
+.cursors > div {
+    --gradient-direction: 0deg;
+    background: linear-gradient(var(--gradient-direction), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+}
+
+.cursors > div:nth-child(1) { --gradient-direction: 0deg; }
+.cursors > div:nth-child(2) { --gradient-direction: 90deg; }
+.cursors > div:nth-child(3) { --gradient-direction: 180deg; }
+.cursors > div:nth-child(4) { --gradient-direction: 270deg; }
+
+
+.map-container {
+    position: relative;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Hide overflow */
+}
+
+.map-image {
+    position: absolute; /* Allow positioning */
+    top: 0;
+    left: 0;
+    width: auto; /* Maintain aspect ratio */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Allow for full size */
+}
+
+.marker {
+    position: absolute;
+    width: 30px; /* Marker size */
+    height: 30px; /* Marker size */
+    background-color: red; /* Marker color */
+    border-radius: 50%; /* Make it circular */
+    cursor: pointer; /* Pointer on hover */
+}
+
+.marker:hover {
+    background-color: orange; /* Change color on hover */
+}
