@@ -10,7 +10,7 @@ const originalWidth = mapImage.naturalWidth;
 const originalHeight = mapImage.naturalHeight;
 
 const markers = [
-    { top: 150, left: 1000, content: 'Poço' },
+    { top: 375, left: 1025, content: 'Poço' },
     { top: 1050, left: 1000, content: 'M01' },
     { top: 1050, left: 1100, content: 'M02' },
     { top: 1050, left: 1200, content: 'M03' },
