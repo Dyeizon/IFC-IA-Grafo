@@ -21,7 +21,7 @@ body {
 .cursors-arrow > div {
     width: 5px; 
     height: var(--arrow-size); 
-    background-color: #666;
+    background-color: #4b4b4b;
     position: relative;
     border-radius: 4px;
 }
@@ -37,7 +37,7 @@ body {
 
 .cursors > div {
     --gradient-direction: 0deg;
-    background: linear-gradient(var(--gradient-direction), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    background: linear-gradient(var(--gradient-direction), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
 .cursors > div:nth-child(1) { --gradient-direction: 0deg; }
@@ -63,11 +63,29 @@ body {
     max-width: none;
 }
 
+#lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+}
+
+#lines > line {
+    stroke: blue;
+    stroke-width: 3;
+}
+
+#lines > text {
+    pointer-events: all;
+}
+
+
 .marker {
     position: absolute;
     width: 35px;
     height: 35px;
-    background-color: red;
+    background-color: black;
     border-radius: 50%;
     cursor: pointer;
     transform: translate(-50%, -50%);
@@ -82,5 +100,5 @@ body {
 }
 
 .marker:hover {
-    background-color: orange;
+    background-color: gray;
 }
